@@ -1,0 +1,15 @@
+{
+  "originHash" : "73e38fc7611b2474007f727b996322432db61ece94c1d9af5dcf9f8df53fec17",
+  "pins" : [
+    {
+      "identity" : "dengage-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dengage-tech/dengage-ios-sdk",
+      "state" : {
+        "revision" : "192d2d9ff4903ea8f22264c1b98147f6c5e0fb4e",
+        "version" : "5.74.0"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		880006232D89C5AD00A1651E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8800061A2D89C5AD00A1651E /* Assets.xcassets */; };
+		880006262D89C5AD00A1651E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8800061F2D89C5AD00A1651E /* Main.storyboard */; };
+		880006272D89C5AD00A1651E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006212D89C5AD00A1651E /* ViewController.swift */; };
+		880006282D89C5AD00A1651E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006192D89C5AD00A1651E /* AppDelegate.swift */; };
+		880006292D89C5AD00A1651E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006202D89C5AD00A1651E /* SceneDelegate.swift */; };
+		8800062B2D89C87200A1651E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800062A2D89C86E00A1651E /* TabBarController.swift */; };
+		8800062D2D89CF1E00A1651E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800062C2D89CF1B00A1651E /* LoginViewController.swift */; };
+		880006302D89D2D900A1651E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800062F2D89D2D700A1651E /* ProfileViewController.swift */; };
+		880006322D89D30400A1651E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006312D89D30300A1651E /* ProductDetailViewController.swift */; };
+		880006342D89D31F00A1651E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006332D89D31E00A1651E /* CartViewController.swift */; };
+		880006362D89D33800A1651E /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006352D89D33700A1651E /* ProductListViewController.swift */; };
+		880006382D89D35000A1651E /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006372D89D34E00A1651E /* CategoryListViewController.swift */; };
+		887FD1492D89DED2000E4435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887FD1482D89DED2000E4435 /* LaunchScreen.storyboard */; };
+		88BF0A7F2D89E59100C8AF00 /* NotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 88BF0A782D89E59100C8AF00 /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		88BF0A8C2D89E5B600C8AF00 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BF0A8B2D89E5B500C8AF00 /* UserNotifications.framework */; };
+		88BF0A8E2D89E5B600C8AF00 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BF0A8D2D89E5B600C8AF00 /* UserNotificationsUI.framework */; };
+		88BF0A982D89E5B600C8AF00 /* NotificationContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 88BF0A892D89E5B500C8AF00 /* NotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		88BF0A9F2D89E70100C8AF00 /* Dengage in Frameworks */ = {isa = PBXBuildFile; productRef = 88BF0A9E2D89E70100C8AF00 /* Dengage */; };
+		88BF0AA12D89E70100C8AF00 /* DengageGeofence in Frameworks */ = {isa = PBXBuildFile; productRef = 88BF0AA02D89E70100C8AF00 /* DengageGeofence */; };
+		88BF0AA32D89E71500C8AF00 /* Dengage in Frameworks */ = {isa = PBXBuildFile; productRef = 88BF0AA22D89E71500C8AF00 /* Dengage */; };
+		88BF0AA52D89E72600C8AF00 /* Dengage in Frameworks */ = {isa = PBXBuildFile; productRef = 88BF0AA42D89E72600C8AF00 /* Dengage */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88BF0A7D2D89E59100C8AF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880005F92D89C52E00A1651E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88BF0A772D89E59100C8AF00;
+			remoteInfo = NotificationServiceExtension;
+		};
+		88BF0A962D89E5B600C8AF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880005F92D89C52E00A1651E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88BF0A882D89E5B500C8AF00;
+			remoteInfo = NotificationContentExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88BF0A842D89E59100C8AF00 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				88BF0A7F2D89E59100C8AF00 /* NotificationServiceExtension.appex in Embed Foundation Extensions */,
+				88BF0A982D89E5B600C8AF00 /* NotificationContentExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		880006012D89C52E00A1651E /* DengageEcommerceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DengageEcommerceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		880006192D89C5AD00A1651E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8800061A2D89C5AD00A1651E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8800061B2D89C5AD00A1651E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8800061E2D89C5AD00A1651E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		880006202D89C5AD00A1651E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		880006212D89C5AD00A1651E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8800062A2D89C86E00A1651E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8800062C2D89CF1B00A1651E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8800062F2D89D2D700A1651E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		880006312D89D30300A1651E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		880006332D89D31E00A1651E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		880006352D89D33700A1651E /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		880006372D89D34E00A1651E /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		887FD1482D89DED2000E4435 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88BF0A732D89E55900C8AF00 /* DengageEcommerceTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DengageEcommerceTest.entitlements; sourceTree = "<group>"; };
+		88BF0A782D89E59100C8AF00 /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		88BF0A892D89E5B500C8AF00 /* NotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		88BF0A8B2D89E5B500C8AF00 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		88BF0A8D2D89E5B600C8AF00 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		88BF0A802D89E59100C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 88BF0A772D89E59100C8AF00 /* NotificationServiceExtension */;
+		};
+		88BF0A992D89E5B600C8AF00 /* Exceptions for "NotificationContentExtension" folder in "NotificationContentExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 88BF0A882D89E5B500C8AF00 /* NotificationContentExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		88BF0A792D89E59100C8AF00 /* NotificationServiceExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				88BF0A802D89E59100C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */,
+			);
+			path = NotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		88BF0A8F2D89E5B600C8AF00 /* NotificationContentExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				88BF0A992D89E5B600C8AF00 /* Exceptions for "NotificationContentExtension" folder in "NotificationContentExtension" target */,
+			);
+			path = NotificationContentExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		880005FE2D89C52E00A1651E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BF0AA12D89E70100C8AF00 /* DengageGeofence in Frameworks */,
+				88BF0A9F2D89E70100C8AF00 /* Dengage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BF0A752D89E59100C8AF00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BF0AA32D89E71500C8AF00 /* Dengage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BF0A862D89E5B500C8AF00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BF0AA52D89E72600C8AF00 /* Dengage in Frameworks */,
+				88BF0A8E2D89E5B600C8AF00 /* UserNotificationsUI.framework in Frameworks */,
+				88BF0A8C2D89E5B600C8AF00 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		880005F82D89C52E00A1651E = {
+			isa = PBXGroup;
+			children = (
+				880006222D89C5AD00A1651E /* DengageEcommerceTest */,
+				88BF0A792D89E59100C8AF00 /* NotificationServiceExtension */,
+				88BF0A8F2D89E5B600C8AF00 /* NotificationContentExtension */,
+				88BF0A8A2D89E5B500C8AF00 /* Frameworks */,
+				880006022D89C52E00A1651E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		880006022D89C52E00A1651E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880006012D89C52E00A1651E /* DengageEcommerceTest.app */,
+				88BF0A782D89E59100C8AF00 /* NotificationServiceExtension.appex */,
+				88BF0A892D89E5B500C8AF00 /* NotificationContentExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880006222D89C5AD00A1651E /* DengageEcommerceTest */ = {
+			isa = PBXGroup;
+			children = (
+				88BF0A732D89E55900C8AF00 /* DengageEcommerceTest.entitlements */,
+				8800062E2D89CF5000A1651E /* ViewControllers */,
+				880006192D89C5AD00A1651E /* AppDelegate.swift */,
+				880006202D89C5AD00A1651E /* SceneDelegate.swift */,
+				8800061A2D89C5AD00A1651E /* Assets.xcassets */,
+				8800061B2D89C5AD00A1651E /* Info.plist */,
+				887FD1482D89DED2000E4435 /* LaunchScreen.storyboard */,
+				8800061F2D89C5AD00A1651E /* Main.storyboard */,
+			);
+			path = DengageEcommerceTest;
+			sourceTree = "<group>";
+		};
+		8800062E2D89CF5000A1651E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				880006372D89D34E00A1651E /* CategoryListViewController.swift */,
+				880006352D89D33700A1651E /* ProductListViewController.swift */,
+				880006332D89D31E00A1651E /* CartViewController.swift */,
+				880006312D89D30300A1651E /* ProductDetailViewController.swift */,
+				8800062F2D89D2D700A1651E /* ProfileViewController.swift */,
+				8800062C2D89CF1B00A1651E /* LoginViewController.swift */,
+				8800062A2D89C86E00A1651E /* TabBarController.swift */,
+				880006212D89C5AD00A1651E /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88BF0A8A2D89E5B500C8AF00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88BF0A8B2D89E5B500C8AF00 /* UserNotifications.framework */,
+				88BF0A8D2D89E5B600C8AF00 /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		880006002D89C52E00A1651E /* DengageEcommerceTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880006142D89C52F00A1651E /* Build configuration list for PBXNativeTarget "DengageEcommerceTest" */;
+			buildPhases = (
+				880005FD2D89C52E00A1651E /* Sources */,
+				880005FE2D89C52E00A1651E /* Frameworks */,
+				880005FF2D89C52E00A1651E /* Resources */,
+				88BF0A842D89E59100C8AF00 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88BF0A7E2D89E59100C8AF00 /* PBXTargetDependency */,
+				88BF0A972D89E5B600C8AF00 /* PBXTargetDependency */,
+			);
+			name = DengageEcommerceTest;
+			packageProductDependencies = (
+				88BF0A9E2D89E70100C8AF00 /* Dengage */,
+				88BF0AA02D89E70100C8AF00 /* DengageGeofence */,
+			);
+			productName = DengageEcommerceTest;
+			productReference = 880006012D89C52E00A1651E /* DengageEcommerceTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88BF0A772D89E59100C8AF00 /* NotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88BF0A812D89E59100C8AF00 /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */;
+			buildPhases = (
+				88BF0A742D89E59100C8AF00 /* Sources */,
+				88BF0A752D89E59100C8AF00 /* Frameworks */,
+				88BF0A762D89E59100C8AF00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				88BF0A792D89E59100C8AF00 /* NotificationServiceExtension */,
+			);
+			name = NotificationServiceExtension;
+			packageProductDependencies = (
+				88BF0AA22D89E71500C8AF00 /* Dengage */,
+			);
+			productName = NotificationServiceExtension;
+			productReference = 88BF0A782D89E59100C8AF00 /* NotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		88BF0A882D89E5B500C8AF00 /* NotificationContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88BF0A9A2D89E5B600C8AF00 /* Build configuration list for PBXNativeTarget "NotificationContentExtension" */;
+			buildPhases = (
+				88BF0A852D89E5B500C8AF00 /* Sources */,
+				88BF0A862D89E5B500C8AF00 /* Frameworks */,
+				88BF0A872D89E5B500C8AF00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				88BF0A8F2D89E5B600C8AF00 /* NotificationContentExtension */,
+			);
+			name = NotificationContentExtension;
+			packageProductDependencies = (
+				88BF0AA42D89E72600C8AF00 /* Dengage */,
+			);
+			productName = NotificationContentExtension;
+			productReference = 88BF0A892D89E5B500C8AF00 /* NotificationContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		880005F92D89C52E00A1651E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					880006002D89C52E00A1651E = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					88BF0A772D89E59100C8AF00 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					88BF0A882D89E5B500C8AF00 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 880005FC2D89C52E00A1651E /* Build configuration list for PBXProject "DengageEcommerceTest" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 880005F82D89C52E00A1651E;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				88BF0A9D2D89E70100C8AF00 /* XCRemoteSwiftPackageReference "dengage-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 880006022D89C52E00A1651E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				880006002D89C52E00A1651E /* DengageEcommerceTest */,
+				88BF0A772D89E59100C8AF00 /* NotificationServiceExtension */,
+				88BF0A882D89E5B500C8AF00 /* NotificationContentExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		880005FF2D89C52E00A1651E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887FD1492D89DED2000E4435 /* LaunchScreen.storyboard in Resources */,
+				880006232D89C5AD00A1651E /* Assets.xcassets in Resources */,
+				880006262D89C5AD00A1651E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BF0A762D89E59100C8AF00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BF0A872D89E5B500C8AF00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		880005FD2D89C52E00A1651E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880006382D89D35000A1651E /* CategoryListViewController.swift in Sources */,
+				880006302D89D2D900A1651E /* ProfileViewController.swift in Sources */,
+				880006362D89D33800A1651E /* ProductListViewController.swift in Sources */,
+				880006272D89C5AD00A1651E /* ViewController.swift in Sources */,
+				880006322D89D30400A1651E /* ProductDetailViewController.swift in Sources */,
+				8800062B2D89C87200A1651E /* TabBarController.swift in Sources */,
+				880006342D89D31F00A1651E /* CartViewController.swift in Sources */,
+				880006282D89C5AD00A1651E /* AppDelegate.swift in Sources */,
+				8800062D2D89CF1E00A1651E /* LoginViewController.swift in Sources */,
+				880006292D89C5AD00A1651E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BF0A742D89E59100C8AF00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BF0A852D89E5B500C8AF00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88BF0A7E2D89E59100C8AF00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88BF0A772D89E59100C8AF00 /* NotificationServiceExtension */;
+			targetProxy = 88BF0A7D2D89E59100C8AF00 /* PBXContainerItemProxy */;
+		};
+		88BF0A972D89E5B600C8AF00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88BF0A882D89E5B500C8AF00 /* NotificationContentExtension */;
+			targetProxy = 88BF0A962D89E5B600C8AF00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8800061F2D89C5AD00A1651E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8800061E2D89C5AD00A1651E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		880006152D89C52F00A1651E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = DengageEcommerceTest/DengageEcommerceTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZWGDPBV9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DengageEcommerceTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengage.DengageEcommerceTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		880006162D89C52F00A1651E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = DengageEcommerceTest/DengageEcommerceTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZWGDPBV9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DengageEcommerceTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengage.DengageEcommerceTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		880006172D89C52F00A1651E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		880006182D89C52F00A1651E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88BF0A822D89E59100C8AF00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZWGDPBV9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengage.DengageEcommerceTest.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88BF0A832D89E59100C8AF00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZWGDPBV9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengage.DengageEcommerceTest.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		88BF0A9B2D89E5B600C8AF00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZWGDPBV9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationContentExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationContentExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengage.DengageEcommerceTest.NotificationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88BF0A9C2D89E5B600C8AF00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZWGDPBV9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationContentExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationContentExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengage.DengageEcommerceTest.NotificationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		880005FC2D89C52E00A1651E /* Build configuration list for PBXProject "DengageEcommerceTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880006172D89C52F00A1651E /* Debug */,
+				880006182D89C52F00A1651E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880006142D89C52F00A1651E /* Build configuration list for PBXNativeTarget "DengageEcommerceTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880006152D89C52F00A1651E /* Debug */,
+				880006162D89C52F00A1651E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88BF0A812D89E59100C8AF00 /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BF0A822D89E59100C8AF00 /* Debug */,
+				88BF0A832D89E59100C8AF00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88BF0A9A2D89E5B600C8AF00 /* Build configuration list for PBXNativeTarget "NotificationContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BF0A9B2D89E5B600C8AF00 /* Debug */,
+				88BF0A9C2D89E5B600C8AF00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88BF0A9D2D89E70100C8AF00 /* XCRemoteSwiftPackageReference "dengage-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dengage-tech/dengage-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 5.74.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88BF0A9E2D89E70100C8AF00 /* Dengage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88BF0A9D2D89E70100C8AF00 /* XCRemoteSwiftPackageReference "dengage-ios-sdk" */;
+			productName = Dengage;
+		};
+		88BF0AA02D89E70100C8AF00 /* DengageGeofence */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88BF0A9D2D89E70100C8AF00 /* XCRemoteSwiftPackageReference "dengage-ios-sdk" */;
+			productName = DengageGeofence;
+		};
+		88BF0AA22D89E71500C8AF00 /* Dengage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88BF0A9D2D89E70100C8AF00 /* XCRemoteSwiftPackageReference "dengage-ios-sdk" */;
+			productName = Dengage;
+		};
+		88BF0AA42D89E72600C8AF00 /* Dengage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88BF0A9D2D89E70100C8AF00 /* XCRemoteSwiftPackageReference "dengage-ios-sdk" */;
+			productName = Dengage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 880005F92D89C52E00A1651E /* Project object */;
+}
