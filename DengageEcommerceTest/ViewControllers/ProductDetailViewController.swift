@@ -35,7 +35,7 @@ class ProductDetailViewController: UIViewController {
     }
     
     func setupViews() {
-        imageView.image = UIImage(named: product.imageName)
+        imageView.image = UIImage.fromBundle(named: product.imageName)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         

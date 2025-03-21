@@ -35,7 +35,7 @@ class ProductListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let product = category.products[indexPath.row]
         cell.textLabel?.text = "\(product.name) - $\(String(format: "%.2f", product.price))"
-        cell.imageView?.image = UIImage(named: product.imageName)
+        cell.imageView?.image = UIImage.fromBundle(named: product.imageName)
         cell.accessoryType = .disclosureIndicator
         return cell
     }

@@ -86,13 +86,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		88BF0A802D89E59100C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 88BF0A772D89E59100C8AF00 /* NotificationServiceExtension */;
-		};
 		88BF0A992D89E5B600C8AF00 /* Exceptions for "NotificationContentExtension" folder in "NotificationContentExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -100,15 +93,27 @@
 			);
 			target = 88BF0A882D89E5B500C8AF00 /* NotificationContentExtension */;
 		};
+		88BF0AB12D89E8CB00C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				NotificationService.swift,
+			);
+			target = 88BF0A772D89E59100C8AF00 /* NotificationServiceExtension */;
+		};
+		88BF0AB22D89E8CB00C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationContentExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				NotificationService.swift,
+			);
+			target = 88BF0A882D89E5B500C8AF00 /* NotificationContentExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		88BF0A792D89E59100C8AF00 /* NotificationServiceExtension */ = {
+		884ED2782D8CD7480007CC78 /* Assets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				88BF0A802D89E59100C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */,
-			);
-			path = NotificationServiceExtension;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		88BF0A8F2D89E5B600C8AF00 /* NotificationContentExtension */ = {
@@ -117,6 +122,15 @@
 				88BF0A992D89E5B600C8AF00 /* Exceptions for "NotificationContentExtension" folder in "NotificationContentExtension" target */,
 			);
 			path = NotificationContentExtension;
+			sourceTree = "<group>";
+		};
+		88BF0AAF2D89E8CB00C8AF00 /* NotificationServiceExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				88BF0AB12D89E8CB00C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */,
+				88BF0AB22D89E8CB00C8AF00 /* Exceptions for "NotificationServiceExtension" folder in "NotificationContentExtension" target */,
+			);
+			path = NotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -156,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				880006222D89C5AD00A1651E /* DengageEcommerceTest */,
-				88BF0A792D89E59100C8AF00 /* NotificationServiceExtension */,
 				88BF0A8F2D89E5B600C8AF00 /* NotificationContentExtension */,
+				88BF0AAF2D89E8CB00C8AF00 /* NotificationServiceExtension */,
 				88BF0A8A2D89E5B500C8AF00 /* Frameworks */,
 				880006022D89C52E00A1651E /* Products */,
 			);
@@ -176,6 +190,7 @@
 		880006222D89C5AD00A1651E /* DengageEcommerceTest */ = {
 			isa = PBXGroup;
 			children = (
+				884ED2782D8CD7480007CC78 /* Assets */,
 				88BF0A732D89E55900C8AF00 /* DengageEcommerceTest.entitlements */,
 				8800062E2D89CF5000A1651E /* ViewControllers */,
 				880006192D89C5AD00A1651E /* AppDelegate.swift */,
@@ -230,6 +245,9 @@
 				88BF0A7E2D89E59100C8AF00 /* PBXTargetDependency */,
 				88BF0A972D89E5B600C8AF00 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				884ED2782D8CD7480007CC78 /* Assets */,
+			);
 			name = DengageEcommerceTest;
 			packageProductDependencies = (
 				88BF0A9E2D89E70100C8AF00 /* Dengage */,
@@ -250,9 +268,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				88BF0A792D89E59100C8AF00 /* NotificationServiceExtension */,
 			);
 			name = NotificationServiceExtension;
 			packageProductDependencies = (
@@ -276,6 +291,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				88BF0A8F2D89E5B600C8AF00 /* NotificationContentExtension */,
+				88BF0AAF2D89E8CB00C8AF00 /* NotificationServiceExtension */,
 			);
 			name = NotificationContentExtension;
 			packageProductDependencies = (

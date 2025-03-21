@@ -27,7 +27,7 @@ class CategoryListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let category = categories[indexPath.row]
         cell.textLabel?.text = category.name
-        cell.imageView?.image = UIImage(named: category.imageName)
+        cell.imageView?.image = UIImage.fromBundle(named: category.imageName)
         cell.accessoryType = .disclosureIndicator
         return cell
     }

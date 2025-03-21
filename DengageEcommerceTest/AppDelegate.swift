@@ -120,6 +120,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         return true
     }
-        
     
+}
+
+
+extension UIImage {
+    static func fromBundle(named imageName: String, withExtension ext: String = "jpg") -> UIImage? {
+        if let imagePath = Bundle.main.path(forResource: imageName, ofType: ext) {
+            return UIImage(contentsOfFile: imagePath)
+        }
+        return nil
+    }
 }

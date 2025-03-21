@@ -35,7 +35,7 @@ class CartViewController: UITableViewController {
         let cartItem = cartItems[indexPath.row]
         
         cell.textLabel?.text = "\(cartItem.product.name) - \(cartItem.quantity) pcs - $\(String(format: "%.2f", cartItem.product.price * Double(cartItem.quantity)))"
-        cell.imageView?.image = UIImage(named: cartItem.product.imageName)
+        cell.imageView?.image = UIImage.fromBundle(named: cartItem.product.imageName)
         
         // Create quantity picker
         let quantityStepper = UIStepper()

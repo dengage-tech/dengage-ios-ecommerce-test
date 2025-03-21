@@ -47,34 +47,54 @@ struct Category {
 
 // MARK: - Dummy Data Provider
 
+
 class DataProvider {
     static let shared = DataProvider()
-    
-    // Creates 5 categories, each with 3 products and associated images
-    let categories: [Category] = {
-        var categories = [Category]()
-        for catIndex in 1...5 {
-            var products = [Product]()
-            for prodIndex in 1...3 {
-                let product = Product(
-                    id: prodIndex,
-                    name: "Product \(prodIndex)",
-                    price: Double.random(in: 10...100),
-                    imageName: "product_\(catIndex)_\(prodIndex)" // Make sure this image exists in assets
-                )
-                products.append(product)
-            }
-            let category = Category(
-                id: catIndex,
-                name: "Category \(catIndex)",
-                imageName: "category_\(catIndex)", // Make sure this image exists in assets
-                products: products
-            )
-            categories.append(category)
-        }
-        return categories
-    }()
+
+    let categories: [Category] = [
+        Category(
+            id: 1,
+            name: "Phones",
+            imageName: "category_01",
+            products: [
+                Product(id: 1, name: "iPhone 16 Pro Max", price: 1199.99, imageName: "product_01"),
+                Product(id: 2, name: "Samsung Galaxy A35", price: 399.99, imageName: "product_02"),
+                Product(id: 3, name: "Samsung Galaxy S24 Ultra", price: 845.99, imageName: "product_03")
+            ]
+        ),
+        Category(
+            id: 2,
+            name: "Sports",
+            imageName: "category_02",
+            products: [
+                Product(id: 4, name: "Spalding TF-1000", price: 79.99, imageName: "product_04"),
+                Product(id: 5, name: "Bushnell Velocity Speed Gun", price: 119.99, imageName: "product_05"),
+                Product(id: 6, name: "adidas Women's Ultrarun 5 Running Sneaker", price: 44.99, imageName: "product_06")
+            ]
+        ),
+        Category(
+            id: 3,
+            name: "Games",
+            imageName: "category_03",
+            products: [
+                Product(id: 7, name: "PlayStation 5 console (slim)", price: 469.99, imageName: "product_07"),
+                Product(id: 8, name: "Silent Hill 2 (PS5)", price: 59.60, imageName: "product_08"),
+                Product(id: 9, name: "PDP Victrix Pro BFG Wireless Gaming Controller", price: 155.00, imageName: "product_09")
+            ]
+        ),
+        Category(
+            id: 4,
+            name: "Laptops",
+            imageName: "category_04",
+            products: [
+                Product(id: 10, name: "Lenovo ThinkPad E14 Gen 5 Business Laptop", price: 729.99, imageName: "product_10"),
+                Product(id: 11, name: "Apple 2025 MacBook Air 15-inch Laptop", price: 1579.99, imageName: "product_11"),
+                Product(id: 12, name: "UtechSmart Venus Pro RGB Wireless MMO Gaming Mouse", price: 47.99, imageName: "product_12")
+            ]
+        )
+    ]
 }
+
 
 // MARK: - User Management
 
