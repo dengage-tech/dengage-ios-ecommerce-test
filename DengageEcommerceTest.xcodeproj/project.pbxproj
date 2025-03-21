@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		880006232D89C5AD00A1651E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8800061A2D89C5AD00A1651E /* Assets.xcassets */; };
 		880006262D89C5AD00A1651E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8800061F2D89C5AD00A1651E /* Main.storyboard */; };
-		880006272D89C5AD00A1651E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006212D89C5AD00A1651E /* ViewController.swift */; };
+		880006272D89C5AD00A1651E /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006212D89C5AD00A1651E /* CheckoutViewController.swift */; };
 		880006282D89C5AD00A1651E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006192D89C5AD00A1651E /* AppDelegate.swift */; };
 		880006292D89C5AD00A1651E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880006202D89C5AD00A1651E /* SceneDelegate.swift */; };
 		8800062B2D89C87200A1651E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800062A2D89C86E00A1651E /* TabBarController.swift */; };
@@ -69,7 +69,7 @@
 		8800061B2D89C5AD00A1651E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8800061E2D89C5AD00A1651E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		880006202D89C5AD00A1651E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		880006212D89C5AD00A1651E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		880006212D89C5AD00A1651E /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		8800062A2D89C86E00A1651E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8800062C2D89CF1B00A1651E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8800062F2D89D2D700A1651E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -206,14 +206,14 @@
 		8800062E2D89CF5000A1651E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				880006372D89D34E00A1651E /* CategoryListViewController.swift */,
-				880006352D89D33700A1651E /* ProductListViewController.swift */,
 				880006332D89D31E00A1651E /* CartViewController.swift */,
-				880006312D89D30300A1651E /* ProductDetailViewController.swift */,
-				8800062F2D89D2D700A1651E /* ProfileViewController.swift */,
+				880006372D89D34E00A1651E /* CategoryListViewController.swift */,
+				880006212D89C5AD00A1651E /* CheckoutViewController.swift */,
 				8800062C2D89CF1B00A1651E /* LoginViewController.swift */,
+				880006312D89D30300A1651E /* ProductDetailViewController.swift */,
+				880006352D89D33700A1651E /* ProductListViewController.swift */,
+				8800062F2D89D2D700A1651E /* ProfileViewController.swift */,
 				8800062A2D89C86E00A1651E /* TabBarController.swift */,
-				880006212D89C5AD00A1651E /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 				880006382D89D35000A1651E /* CategoryListViewController.swift in Sources */,
 				880006302D89D2D900A1651E /* ProfileViewController.swift in Sources */,
 				880006362D89D33800A1651E /* ProductListViewController.swift in Sources */,
-				880006272D89C5AD00A1651E /* ViewController.swift in Sources */,
+				880006272D89C5AD00A1651E /* CheckoutViewController.swift in Sources */,
 				880006322D89D30400A1651E /* ProductDetailViewController.swift in Sources */,
 				8800062B2D89C87200A1651E /* TabBarController.swift in Sources */,
 				880006342D89D31F00A1651E /* CartViewController.swift in Sources */,

@@ -12,44 +12,41 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabs()
-        addTopBorderToTabBar()
+        configureTabBarAppearance()
         
-        // Observe cart updates to update badge count
         NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: .cartUpdated, object: nil)
     }
     
     func setupTabs() {
-        // Categories tab
         let categoriesVC = CategoryListViewController()
         let categoriesNav = UINavigationController(rootViewController: categoriesVC)
         categoriesNav.tabBarItem = UITabBarItem(title: "Categories", image: UIImage(systemName: "list.bullet"), tag: 0)
         
-        // Cart tab
         let cartVC = CartViewController()
         let cartNav = UINavigationController(rootViewController: cartVC)
         cartNav.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart"), tag: 1)
         updateCartBadgeForTabItem(cartNav.tabBarItem)
         
-        // Profile tab
         let profileVC = ProfileViewController()
         let profileNav = UINavigationController(rootViewController: profileVC)
         profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 2)
-
+        
         viewControllers = [categoriesNav, cartNav, profileNav]
     }
     
-    func addTopBorderToTabBar() {
-        let border = UIView()
-        border.backgroundColor = UIColor.lightGray // Change color as needed
-        border.translatesAutoresizingMaskIntoConstraints = false
-        tabBar.addSubview(border)
-        
-        NSLayoutConstraint.activate([
-            border.topAnchor.constraint(equalTo: tabBar.topAnchor),
-            border.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
-            border.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
-            border.heightAnchor.constraint(equalToConstant: 0.5) // Adjust thickness
-        ])
+    func configureTabBarAppearance() {
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.systemBackground
+            appearance.stackedLayoutAppearance.selected.iconColor = UIColor.systemBlue
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = appearance
+        } else {
+            tabBar.barTintColor = UIColor.systemBackground
+            tabBar.tintColor = UIColor.systemBlue
+        }
     }
     
     @objc func updateCartBadge() {
@@ -61,10 +58,9 @@ class TabBarController: UITabBarController {
             }
         }
     }
-
+    
     func updateCartBadgeForTabItem(_ item: UITabBarItem) {
-        let totalItems = CartManager.shared.items.values.reduce(0, +) // Sum of all quantities
+        let totalItems = CartManager.shared.items.values.reduce(0, +)
         item.badgeValue = totalItems > 0 ? "\(totalItems)" : nil
     }
-
 }

@@ -12,14 +12,16 @@ class ProfileViewController: UITableViewController {
     let user = UserManager.shared.currentUsername ?? "Guest"
     
     let fields = ["Username", "Email", "Phone"]
-    var values = ["User123", "user@example.com", "+1 (555) 123-4567"]
+    var values: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-        tableView = UITableView(frame: .zero, style: .insetGrouped) // Modern form style
+        tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "logoutCell")
+        let username = UserManager.shared.currentUsername ?? "Guest"
+        values = [username, "", ""]
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,10 +34,13 @@ class ProfileViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            // .subtitle style ile cell oluşturun
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             cell.textLabel?.text = fields[indexPath.row]
             cell.detailTextLabel?.text = values[indexPath.row]
-            cell.accessoryType = .disclosureIndicator
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
+            cell.selectionStyle = .none
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "logoutCell", for: indexPath)
@@ -46,18 +51,27 @@ class ProfileViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 0 {
-            editField(at: indexPath.row)
+            // Only allow editing for Email or Phone (row 1 or 2).
+            if indexPath.row != 0 {
+                editField(at: indexPath.row)
+            }
         } else {
+            // Logout
             handleLogout()
         }
     }
     
-    func editField(at index: Int) {
-        let alert = UIAlertController(title: "Edit \(fields[index])", message: nil, preferredStyle: .alert)
+    private func editField(at index: Int) {
+        let alert = UIAlertController(title: "Edit \(fields[index])",
+                                      message: nil,
+                                      preferredStyle: .alert)
         alert.addTextField { textField in
             textField.text = self.values[index]
         }
@@ -71,7 +85,7 @@ class ProfileViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    func handleLogout() {
+    private func handleLogout() {
         UserManager.shared.logout()
         
         let loginVC = LoginViewController()

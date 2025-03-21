@@ -9,10 +9,33 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let logoImageView = UIImageView()
-    let usernameTextField = UITextField()
-    let passwordTextField = UITextField()
-    let loginButton = UIButton(type: .system)
+    let logoImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "logo"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    let usernameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Username"
+        textField.borderStyle = .roundedRect
+        textField.autocapitalizationType = .none
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    
+    let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Login", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.backgroundColor = UIColor.systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,60 +44,29 @@ class LoginViewController: UIViewController {
     }
     
     func setupViews() {
-        // Setup logo
-        logoImageView.image = UIImage(named: "logo") // Add a "logo" image in assets
-        logoImageView.contentMode = .scaleAspectFit
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        let stackView = UIStackView(arrangedSubviews: [logoImageView, usernameTextField, loginButton])
+        stackView.axis = .vertical
+        stackView.spacing = 15
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stackView)
         
-        // Configure text fields
-        usernameTextField.placeholder = "Username"
-        usernameTextField.borderStyle = .roundedRect
-        usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-        usernameTextField.autocapitalizationType = .none
-        
-        passwordTextField.placeholder = "Password"
-        passwordTextField.borderStyle = .roundedRect
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.autocapitalizationType = .none
-        
-        // Configure login button
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
-        
-        // Add subviews
-        view.addSubview(logoImageView)
-        view.addSubview(usernameTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(loginButton)
-        
-        // Layout constraints
         NSLayoutConstraint.activate([
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.bottomAnchor.constraint(equalTo: usernameTextField.topAnchor, constant: -20),
-            logoImageView.widthAnchor.constraint(equalToConstant: 150),
-            logoImageView.heightAnchor.constraint(equalToConstant: 150),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
-            usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
-            usernameTextField.widthAnchor.constraint(equalToConstant: 250),
-            
-            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 15),
-            passwordTextField.widthAnchor.constraint(equalTo: usernameTextField.widthAnchor),
-            
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20)
+            logoImageView.heightAnchor.constraint(equalToConstant: 100),
+            loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+
     }
     
     @objc func handleLogin() {
-        guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
-        UserManager.shared.login(username: username, password: password) { success in
+        guard let username = usernameTextField.text else { return }
+        UserManager.shared.login(username: username) { success in
             if success {
-                // On successful login, transition to the main tab bar controller
                 let tabBarController = TabBarController()
                 if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                     sceneDelegate.window?.rootViewController = tabBarController
