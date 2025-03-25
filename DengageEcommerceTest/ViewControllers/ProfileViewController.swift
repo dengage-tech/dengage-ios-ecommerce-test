@@ -60,7 +60,7 @@ class ProfileViewController: UITableViewController {
         if indexPath.section == 0 {
             // Only allow editing for Email or Phone (row 1 or 2).
             if indexPath.row != 0 {
-                editField(at: indexPath.row)
+                //editField(at: indexPath.row)
             }
         } else {
             // Logout

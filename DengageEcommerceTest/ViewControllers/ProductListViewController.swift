@@ -15,10 +15,10 @@ class ProductListViewController: UITableViewController {
     init(category: Category) {
         self.category = category
         super.init(style: .plain)
-        Dengage.setNavigation(screenName: "category")
+        Dengage.setNavigation(screenName: category.imageName)
         Dengage.pageView(parameters: [
             "page_type": "category",
-            "category_id": String(category.id)
+            "category_id": category.imageName
         ])
     }
     
@@ -67,6 +67,7 @@ class ProductCell: UITableViewCell {
     
     let productImageView = UIImageView()
     let nameLabel = UILabel()
+    let idLabel = UILabel() // New UILabel for product ID
     let priceLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -88,12 +89,16 @@ class ProductCell: UITableViewCell {
         
         nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        idLabel.font = UIFont.systemFont(ofSize: 14) // Smaller font
+        idLabel.textColor = .secondaryLabel
+        idLabel.translatesAutoresizingMaskIntoConstraints = false
         
         priceLabel.font = UIFont.systemFont(ofSize: 16)
         priceLabel.textColor = .gray
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, priceLabel])
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, idLabel, priceLabel])
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +127,7 @@ class ProductCell: UITableViewCell {
     func configure(with product: Product) {
         productImageView.image = UIImage.fromBundle(named: product.imageName)
         nameLabel.text = product.name
+        idLabel.text = product.imageName
         priceLabel.text = "$\(String(format: "%.2f", product.price))"
     }
 }

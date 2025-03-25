@@ -33,6 +33,15 @@ class ProductDetailViewController: UIViewController {
         return label
     }()
     
+    let idLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let priceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20)
@@ -73,10 +82,10 @@ class ProductDetailViewController: UIViewController {
         self.product = product
         super.init(nibName: nil, bundle: nil)
         title = product.name
-        Dengage.setNavigation(screenName: "category")
+        Dengage.setNavigation(screenName: product.imageName)
         Dengage.pageView(parameters: [
             "page_type": "product",
-            "category_id": String(product.id)
+            "category_id": product.imageName
         ])
     }
     
@@ -118,6 +127,8 @@ class ProductDetailViewController: UIViewController {
     func setupViews() {
         productImageView.image = UIImage.fromBundle(named: product.imageName)
         nameLabel.text = product.name
+        idLabel.text = product.imageName
+
         priceLabel.text = "$\(String(format: "%.2f", product.price))"
         
         quantityPicker.dataSource = self
@@ -125,6 +136,7 @@ class ProductDetailViewController: UIViewController {
         
         contentView.addSubview(productImageView)
         contentView.addSubview(nameLabel)
+        contentView.addSubview(idLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(quantityLabel)
         contentView.addSubview(quantityPicker)
@@ -143,7 +155,11 @@ class ProductDetailViewController: UIViewController {
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            priceLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            idLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            idLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            idLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+
+            priceLabel.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 10),
             priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             

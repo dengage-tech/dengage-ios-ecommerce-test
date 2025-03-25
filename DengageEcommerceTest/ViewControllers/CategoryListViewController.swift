@@ -29,7 +29,7 @@ class CategoryListViewController: UITableViewController {
         let category = categories[indexPath.row]
         cell.configure(with: category)
         return cell
-
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,6 +54,7 @@ class CategoryCell: UITableViewCell {
     
     let categoryImageView = UIImageView()
     let nameLabel = UILabel()
+    let idLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -75,8 +76,11 @@ class CategoryCell: UITableViewCell {
         nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        idLabel.font = UIFont.systemFont(ofSize: 14) // Smaller font
+        idLabel.textColor = .secondaryLabel
+        idLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        let stackView = UIStackView(arrangedSubviews: [nameLabel])
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, idLabel])
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,5 +109,6 @@ class CategoryCell: UITableViewCell {
     func configure(with category: Category) {
         categoryImageView.image = UIImage.fromBundle(named: category.imageName)
         nameLabel.text = category.name
+        idLabel.text = category.imageName
     }
 }

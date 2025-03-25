@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Dengage
 
 class LoginViewController: UIViewController {
     
@@ -64,10 +65,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleLogin() {
-        guard let username = usernameTextField.text else { return }
+        guard let username = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         UserManager.shared.login(username: username) { success in
             if success {
                 let tabBarController = TabBarController()
+                Dengage.setContactKey(contactKey: username)
                 if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                     sceneDelegate.window?.rootViewController = tabBarController
                 }
