@@ -18,20 +18,25 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabs() {
+        
+        let homeVC = HomeViewController()
+        let homeNav = UINavigationController(rootViewController: homeVC)
+        homeNav.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        
         let categoriesVC = CategoryListViewController()
         let categoriesNav = UINavigationController(rootViewController: categoriesVC)
-        categoriesNav.tabBarItem = UITabBarItem(title: "Categories", image: UIImage(systemName: "list.bullet"), tag: 0)
+        categoriesNav.tabBarItem = UITabBarItem(title: "Categories", image: UIImage(systemName: "list.bullet"), tag: 1)
         
         let cartVC = CartViewController()
         let cartNav = UINavigationController(rootViewController: cartVC)
-        cartNav.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart"), tag: 1)
+        cartNav.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart"), tag: 2)
         updateCartBadgeForTabItem(cartNav.tabBarItem)
         
         let profileVC = ProfileViewController()
         let profileNav = UINavigationController(rootViewController: profileVC)
-        profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 2)
+        profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 3)
         
-        viewControllers = [categoriesNav, cartNav, profileNav]
+        viewControllers = [homeNav, categoriesNav, cartNav, profileNav]
     }
     
     func configureTabBarAppearance() {

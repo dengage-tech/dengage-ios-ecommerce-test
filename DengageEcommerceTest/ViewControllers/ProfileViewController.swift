@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Dengage
 
 class ProfileViewController: UITableViewController {
     
     let user = UserManager.shared.currentUsername ?? "Guest"
     
-    let fields = ["Username", "Email", "Phone"]
+    let fields = ["Username", "Device Token", "Device Id"]
     var values: [String] = []
     
     override func viewDidLoad() {
@@ -21,7 +22,7 @@ class ProfileViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "logoutCell")
         let username = UserManager.shared.currentUsername ?? "Guest"
-        values = [username, "", ""]
+        values = [username, Dengage.getDeviceToken() ?? "", Dengage.getDeviceId() ?? ""]
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,13 +35,17 @@ class ProfileViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            // .subtitle style ile cell oluşturun
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             cell.textLabel?.text = fields[indexPath.row]
             cell.detailTextLabel?.text = values[indexPath.row]
             cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
             cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
             cell.selectionStyle = .none
+            
+            cell.detailTextLabel?.isUserInteractionEnabled = true
+            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(copyFieldText(_:)))
+            cell.detailTextLabel?.addGestureRecognizer(longPress)
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "logoutCell", for: indexPath)
@@ -50,6 +55,25 @@ class ProfileViewController: UITableViewController {
             return cell
         }
     }
+
+    
+    
+    @objc func copyFieldText(_ gesture: UILongPressGestureRecognizer) {
+        guard gesture.state == .began,
+              let label = gesture.view as? UILabel,
+              let text = label.text else { return }
+
+        UIPasteboard.general.string = text
+        
+        let alert = UIAlertController(title: nil, message: "Copied: \(text)", preferredStyle: .alert)
+        present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+            alert.dismiss(animated: true)
+        }
+    }
+
+
+
     
     
     override func tableView(_ tableView: UITableView,
@@ -86,6 +110,7 @@ class ProfileViewController: UITableViewController {
     }
     
     private func handleLogout() {
+        CartManager.shared.clearCart()
         UserManager.shared.logout()
         
         let loginVC = LoginViewController()

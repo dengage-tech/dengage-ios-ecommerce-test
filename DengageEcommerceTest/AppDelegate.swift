@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         
-        Dengage.start(apiKey: dengageecommercetest_ios_sandbox, application: application, launchOptions: [:],
+        Dengage.start(apiKey: dengageecommercetest_ios_production, application: application, launchOptions: [:],
                       dengageOptions: option)
         
         UNUserNotificationCenter.current().delegate = self

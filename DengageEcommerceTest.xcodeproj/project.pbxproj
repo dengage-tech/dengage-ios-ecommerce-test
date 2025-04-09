@@ -28,6 +28,7 @@
 		88BF0AA12D89E70100C8AF00 /* DengageGeofence in Frameworks */ = {isa = PBXBuildFile; productRef = 88BF0AA02D89E70100C8AF00 /* DengageGeofence */; };
 		88BF0AA32D89E71500C8AF00 /* Dengage in Frameworks */ = {isa = PBXBuildFile; productRef = 88BF0AA22D89E71500C8AF00 /* Dengage */; };
 		88BF0AA52D89E72600C8AF00 /* Dengage in Frameworks */ = {isa = PBXBuildFile; productRef = 88BF0AA42D89E72600C8AF00 /* Dengage */; };
+		88E2CA5A2D92DA9900861A70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2CA592D92DA9100861A70 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		88BF0A892D89E5B500C8AF00 /* NotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BF0A8B2D89E5B500C8AF00 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		88BF0A8D2D89E5B600C8AF00 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		88E2CA592D92DA9100861A70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -209,6 +211,7 @@
 				880006332D89D31E00A1651E /* CartViewController.swift */,
 				880006372D89D34E00A1651E /* CategoryListViewController.swift */,
 				880006212D89C5AD00A1651E /* CheckoutViewController.swift */,
+				88E2CA592D92DA9100861A70 /* HomeViewController.swift */,
 				8800062C2D89CF1B00A1651E /* LoginViewController.swift */,
 				880006312D89D30300A1651E /* ProductDetailViewController.swift */,
 				880006352D89D33700A1651E /* ProductListViewController.swift */,
@@ -385,6 +388,7 @@
 				880006322D89D30400A1651E /* ProductDetailViewController.swift in Sources */,
 				8800062B2D89C87200A1651E /* TabBarController.swift in Sources */,
 				880006342D89D31F00A1651E /* CartViewController.swift in Sources */,
+				88E2CA5A2D92DA9900861A70 /* HomeViewController.swift in Sources */,
 				880006282D89C5AD00A1651E /* AppDelegate.swift in Sources */,
 				8800062D2D89CF1E00A1651E /* LoginViewController.swift in Sources */,
 				880006292D89C5AD00A1651E /* SceneDelegate.swift in Sources */,
