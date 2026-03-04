@@ -55,10 +55,6 @@ class HomeViewController: UIViewController {
                                      customParams: [:],
                                      hideIfNotFound: true)
             
-            // Insert webView1 into the stack view and add a temporary height constraint.
-            
-            
-            // Adjust the height based on the web content.
             //self.updateWebViewHeight()
         }
     }

@@ -149,64 +149,92 @@ extension Notification.Name {
 
 class CartManager {
     static let shared = CartManager()
-    
-    private let cartUserDefaultsKey = "cartItems"
-    
+
+    // MARK: – Keys & Storage
+
+    private let userDefaults = UserDefaults.standard
+    private let cartKeyPrefix = "cartItems_"
+
+    // The in‑memory copy
     private(set) var items: [Product: Int] = [:] {
         didSet {
             NotificationCenter.default.post(name: .cartUpdated, object: nil)
-            saveCartToUserDefaults()
         }
     }
-    
+
     private init() {
-        loadCartFromUserDefaults()
+        // When the app starts, if someone is already logged in, load their cart.
+        loadCartForCurrentUser()
     }
-    
+
+    // MARK: – Public API
+
+    /// Add up to 10 units of a product, then persist.
     func add(product: Product, quantity: Int) {
-        let currentQuantity = items[product] ?? 0
-        let newQuantity = currentQuantity + quantity
-        items[product] = min(newQuantity, 10) // Cap at 10
+        let current = items[product] ?? 0
+        items[product] = min(current + quantity, 10)
+        saveCartForCurrentUser()
     }
-    
+
+    /// Update quantity (1…10), then persist.
     func updateQuantity(for product: Product, quantity: Int) {
-        let clamped = min(quantity, 10)
-        if clamped > 0 {
-            items[product] = clamped
-        } else {
-            items.removeValue(forKey: product)
-        }
+        let clamped = min(max(quantity, 1), 10)
+        items[product] = clamped
+        saveCartForCurrentUser()
     }
-    
+
+    /// Remove a product, then persist.
     func remove(product: Product) {
         items.removeValue(forKey: product)
+        saveCartForCurrentUser()
     }
-    
-    func clearCart() {
+
+    /// Clear in‑memory only (called on log‑out), **without** wiping persistent storage.
+    func clearMemory() {
         items.removeAll()
     }
-    
-    private func saveCartToUserDefaults() {
-        var dictToSave: [String: Int] = [:]
-        for (product, quantity) in items {
-            dictToSave[String(product.id)] = quantity
+
+    // MARK: – Persistence Helpers
+
+    /// Persist the `items` dictionary under a user–specific key.
+    private func saveCartForCurrentUser() {
+        guard let username = UserManager.shared.currentUsername else { return }
+        let dict = items.reduce(into: [String:Int]()) { partial, pair in
+            partial["\(pair.key.id)"] = pair.value
         }
-        UserDefaults.standard.set(dictToSave, forKey: cartUserDefaultsKey)
+        userDefaults.set(dict, forKey: cartKeyPrefix + username)
     }
-    
-    private func loadCartFromUserDefaults() {
-        guard let savedData = UserDefaults.standard.dictionary(forKey: cartUserDefaultsKey) as? [String: Int] else {
+
+    /// Load from persistent storage for the current user.
+    func loadCartForCurrentUser() {
+        guard let username = UserManager.shared.currentUsername else { return }
+        let key = cartKeyPrefix + username
+        guard let raw = userDefaults.dictionary(forKey: key) as? [String:Int] else {
+            items = [:]
             return
         }
-        
-        var loadedItems: [Product: Int] = [:]
-        for (productIDString, quantity) in savedData {
-            if let productID = Int(productIDString),
-               let product = DataProvider.shared.findProductById(productID) {
-                loadedItems[product] = quantity
+        // Convert back from [String:Int] to [Product:Int]
+        items = raw.compactMapKeys { (idString, qty) in
+            guard let id = Int(idString),
+                  let product = DataProvider.shared.findProductById(id)
+            else { return nil }
+            return (product, min(qty, 10))
+        }
+    }
+}
+
+// Helper to turn a dictionary into a `[Product:Int]`
+private extension Dictionary where Key == String, Value == Int {
+    func compactMapKeys(
+      _ transform: (Key, Value) -> (Product, Int)?
+    ) -> [Product:Int] {
+        var out: [Product:Int] = [:]
+        for (k, v) in self {
+            if let (prod, qty) = transform(k, v) {
+                out[prod] = qty
             }
         }
-        self.items = loadedItems
+        return out
     }
 }
 
@@ -278,7 +306,7 @@ class CheckoutViewController: UIViewController {
     
     @objc private func didTapPlaceOrder() {
         // Clear the cart
-        CartManager.shared.clearCart()
+        CartManager.shared.clearMemory()
         
         let alert = UIAlertController(
             title: "Order Placed",

@@ -110,7 +110,7 @@ class ProfileViewController: UITableViewController {
     }
     
     private func handleLogout() {
-        CartManager.shared.clearCart()
+        CartManager.shared.clearMemory()
         UserManager.shared.logout()
         
         let loginVC = LoginViewController()

@@ -15,9 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let dengageecommercetest_ios_sandbox = "8R7xnbN2nL_s_l_gFK9m1E7dEUiDdcFOJp63a5b7epex8G7g0bw0erXwr0ujD0X3dWsMlteV7ybzYPmrLVZHnf1ukEho1_s_l_V99dYQiW_s_l_WsquHn5C9uhpR_p_l_iBXz5uu7s2f0uaR"
+        //let dengageecommercetest_ios_sandbox = "8R7xnbN2nL_s_l_gFK9m1E7dEUiDdcFOJp63a5b7epex8G7g0bw0erXwr0ujD0X3dWsMlteV7ybzYPmrLVZHnf1ukEho1_s_l_V99dYQiW_s_l_WsquHn5C9uhpR_p_l_iBXz5uu7s2f0uaR"
+        //let dengageecommercetest_ios_production = "dMmkZjOGcl_s_l_9Q_s_l_wCoTeRdlLwHeR5jNvLzyzwBTlGYo8vLxc0xdUw7IUDqH_p_l_pAagxgfMikaE6LQCi3aGgJfuG_p_l_ERuRAr9F9u7YpSJesPZ4s220UWvEsF_s_l_Q1sLkvPNLByU"
         
-        let dengageecommercetest_ios_production = "dMmkZjOGcl_s_l_9Q_s_l_wCoTeRdlLwHeR5jNvLzyzwBTlGYo8vLxc0xdUw7IUDqH_p_l_pAagxgfMikaE6LQCi3aGgJfuG_p_l_ERuRAr9F9u7YpSJesPZ4s220UWvEsF_s_l_Q1sLkvPNLByU"
+        let dengageecommercetest_ios_sandbox = "msR_s_l_rqhE11546a4RWwXQ2F_s_l_rptY2jlCEzWcXXV0zzOpa9nzmQUtCcD32w36tWiWFTv58rK_p_l_nD57LV6Se0YIjVETteBRLunfTg2HUBPcKhyuvpknWAxnAG0l5lbsoMLPy"
+        
+        let dengageecommercetest_ios_production = "nntgONfr9BL5OgWnmM3RvdwuHvPaAmnbYhcoWNygjHLaYGoggjDQmbjnOINkmg4jG2TSoGuciWbkpZASVU7M6Qy8yCsWGyYfOWjTm5vVxcH6vJgx0la76aYFV2_s_l_4UUS6"
+        
         
         let option = DengageOptions(disableOpenURL: false,
                                     badgeCountReset: true,

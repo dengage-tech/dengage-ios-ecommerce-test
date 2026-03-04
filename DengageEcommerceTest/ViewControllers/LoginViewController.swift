@@ -68,6 +68,7 @@ class LoginViewController: UIViewController {
         guard let username = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         UserManager.shared.login(username: username) { success in
             if success {
+                CartManager.shared.loadCartForCurrentUser()
                 let tabBarController = TabBarController()
                 Dengage.setContactKey(contactKey: username)
                 if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
